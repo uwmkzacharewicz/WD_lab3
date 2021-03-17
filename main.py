@@ -83,14 +83,22 @@ print("\n----- ZADANIE 6 -----")
 
 
 def ciag(a=1, b=4, ile=10):
-    iloczyn = a
-    for x in range(1, ile+1):
-        iloczyn *= x*b
-    return iloczyn
+    lista = [a]
+    for x in range(ile):    # 10 razy mnozy, czyli 11 wyrazow
+        wynik = lista[x]*b
+        lista.append(wynik)
+    return lista
 
 
-print(ciag(1, 2, 7))
+def ciag2(a=1, b=4, ile=10):
+    return [a * b ** x for x in range(ile+1)]
+
+
 print(ciag())
+print(ciag2())
+
+print(ciag(2, 4, 12))
+print(ciag2(2, 4, 12))
 
 # zadanie 7
 # Napisz funkcje za pomocą operatora *, która wykona te same działanie co w zadaniu 6.
